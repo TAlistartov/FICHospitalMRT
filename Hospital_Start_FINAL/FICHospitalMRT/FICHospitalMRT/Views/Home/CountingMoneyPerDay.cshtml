@@ -1,0 +1,69 @@
+﻿<div class="container-fluid">
+    <div class="form-horizontal col-lg-5 col-md-5 col-sm-4 col-xs-4">
+
+        @*General summ per day*@
+        <div class="form-group">
+            <label id="generalsum" for="#GeneralSum" class="text-left col-lg-6 col-md-6 col-sm-5 col-xs-4">Общая сумма за день:</label>
+            <div class="col-lg-4 col-md-5 col-sm-7 col-xs-8">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="GeneralSum" readonly="readonly" />
+                            <span class="input-group-addon">грн.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        @*The summ of terminal payment per tooday*@
+        <div class="form-group">
+            <label id="terminalsum" for="#TerminalSum" class="text-left col-lg-6 col-md-6 col-sm-5 col-xs-4">Сумма прошедшая через терминал:</label>
+            <div class="col-lg-4 col-md-5 col-sm-7 col-xs-8">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="TerminalSum" readonly="readonly" />
+                            <span class="input-group-addon">грн.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*Additional expenses per day*@
+        <div class="form-group">
+            <label id="additionalexpenses" for="#AdditionalExpenses" class="text-left col-lg-6 col-md-6 col-sm-5 col-xs-4">Дополнительные расходы:</label>
+            <div class="col-lg-4 col-md-5 col-sm-7 col-xs-8">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="AdditionalExpenses" readonly="readonly"/>
+                            <span class="input-group-addon">грн.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*The summ of Cash per tooday*@
+        <div class="form-group">
+            <label id="cashsum"for="#CashSum" class="text-left col-lg-6 col-md-6 col-sm-5 col-xs-4">Остаток по наличке:</label>
+            <div class="col-lg-4 col-md-5 col-sm-7 col-xs-8">
+                <div class="row">
+                    <div class="col-lg-11 col-md-11 col-sm-11">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="CashSum" readonly="readonly" />
+                            <span class="input-group-addon">грн.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @*<div class="col-lg-7">*@
+        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-7" id="ListOfCharges"></div>
+    @*</div>*@
+</div>
+

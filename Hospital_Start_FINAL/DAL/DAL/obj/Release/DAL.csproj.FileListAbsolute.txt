@@ -1,0 +1,5 @@
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\DAL\DAL\bin\Release\DAL.dll
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\DAL\DAL\bin\Release\DAL.pdb
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\DAL\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\DAL\DAL\obj\Release\DAL.dll
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\DAL\DAL\obj\Release\DAL.pdb

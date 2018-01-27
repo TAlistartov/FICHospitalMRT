@@ -1,0 +1,7 @@
+﻿@model FICHospitalMRT.Models.LaborantsChangeData
+
+<div class="form-group">
+    <label for="dropdownAllLaborantsForChangingDB">Выберите обследование:</label>
+    @Html.DropDownListFor(x => x.SelectedValue, Model.AllLaborantsDb, "--Выберите лаборанта--", new { @id = "dropdownAllLaborantsForChangingDB", @class = "dropdown-toggle form-control" })
+</div>
+

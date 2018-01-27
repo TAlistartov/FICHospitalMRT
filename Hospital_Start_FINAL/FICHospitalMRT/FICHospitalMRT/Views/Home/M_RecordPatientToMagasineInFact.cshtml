@@ -1,0 +1,199 @@
+﻿
+@model FICHospitalMRT.Models.MagasineInFact
+<div class="modal fade" id="RecordPatientToMagasineInFact" name="modalwindowinfactmagasine">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">
+                    <i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title col-sm-9 col-md-9 col-lg-9">Работа в журнале 'По факту'.</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                     <form class="form-horizontal" id="RecordPatientToFact" onsubmit="return false;">
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="LastName" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Фамилия:</label>
+                                <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                    <input type="text" class="form-control my_reset" id="LastName" placeholder="Фамилия" name="lastname">
+                                </div>                               
+                            </div>
+                        </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="FirstName" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Имя:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <input type="text" class="form-control my_reset" id="FirstName" placeholder="Имя" name="firstname">
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="MiddleName" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Отчество:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <input type="text" class="form-control my_reset" id="MiddleName" placeholder="Отчество" name="middlename">
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="CellPhone" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Телефон:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <input type="text" class="form-control my_reset" id="CellPhone" placeholder="Номер иелефона" name="cellphone">
+                                  </div>
+                                 <i class="fa fa-caret-square-o-down fa-lg" id="MoreInformationAboutPatient" title="Просмотреть дополнительную информацию."></i>
+                             </div>
+                         </div>
+
+                         <div class="collapse fade" aria-expanded="false" id="AdditionalInformatien">
+                             <div class="row">
+                                 <div class="form-group">
+                                     <label for="BirthDate" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Дата рождения:</label>
+                                     <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                         <input type="text" class="form-control my_reset" id="BirthDate" placeholder="Дата рождения" name="birthdate">
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="form-group">
+                                     <label for="Adress" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Адрес:</label>
+                                     <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                         <input type="text" class="form-control my_reset" id="Adress" placeholder="Адрес" name="adress">
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="form-group">
+                                     <label for="JobPlace" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Место работы:</label>
+                                     <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                         <input type="text" class="form-control my_reset" id="JobPlace" placeholder="Место работы" name="jobplace">
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="form-group">
+                                     <label for="Email" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Email:</label>
+                                     <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                         <input type="text" class="form-control my_reset" id="Email" placeholder="Электронный адрес" name="email">
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="VisitDateInFact" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Время:</label>
+                                    <div class="input-group col-lg-5 col-md-4 col-sm-4 col-xs-4" id="VisitDateInFact">
+                                         <input type="text" class="form-control my_reset" id="VisitDateInFactMagasine" name="visitdateinfactmagasine" />
+                                         <span class="input-group-addon" id="Calendar">
+                                             <span   class="fa fa-calendar" aria-hidden="true"></span>
+                                         </span>
+                                     </div>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="DoctorData" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Направил:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <input type="text" class="form-control my_reset" id="DoctorData" placeholder="ФИО доктора" name="doctordata">
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="StudyType" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Обследование:</label>
+                                 <div class="dropdown col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     @Html.DropDownListFor(x => x.SelectedStudyInFact, Model.AllUsedStudiesFromDb, "-Выбирете обследование-", new { @id = "ViewOfStudyInFact", @class = "dropdown-toggle form-control" })
+                                 </div>                            
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="FinalCost" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Сумма к оплате:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <input type="text" class="form-control my_reset" id="FinalCost" placeholder="Сумма к оплате" name="amount">
+                                 </div>
+                             </div>
+                         </div>
+
+                         
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="LaborantData" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Лаборант:</label>
+                                 <div class="dropdown col-lg-5 col-md-4 col-sm-4 col-xs-4 ">
+                                     @Html.DropDownListFor(x => x.SelectedLaborantInFact, Model.AllLaborantsFromDb, "-Выбирете лаборанта-", new { @id = "LaborantData", @class = "dropdown-toggle form-control" })
+                                 </div>
+                                 <i class="fa fa-plus-square fa-lg" id="AddOneMoreLaborant" title="Добавить второго лборанта."></i>
+                             </div>
+                         </div>
+
+                         <div class="row" id="TheSecondLaborant">
+                             <div class="form-group">
+                                 <label for="LaborantData_1" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Лаборант №2:</label>
+                                 <div class="dropdown col-lg-5 col-md-4 col-sm-4 col-xs-4" id='lab_num_2'>
+                                     @* Empty place for the second Drop Down List With Laborants *@                                    
+                                 </div>  
+                                 <i class="fa fa-minus-square fa-lg" id="DeleteSecondLaborant" title="Удалить второго лаборанта."></i>                               
+                             </div>
+                         </div>
+
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="NoteForDiscount" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label text-right">Примечание:</label>
+                                 <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4">
+                                     <textarea rows="3" type="text" class="form-control my_reset" id="NoteForDiscount" placeholder="Если пациенту сделали скидку, укажите ее причину." name="notefordiscount"></textarea>
+                                     @*<input type="text" class="form-control my_reset" id="NoteForDiscount" placeholder="Укажите причину скидки" name="notefordiscount">*@
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <div class="row">
+                             <div class="form-group">
+                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                     <label for="IsCash" class="col-lg-10 col-md-9 col-sm-9 col-xs-10 control-label text-right">Оплата наличкой:</label>
+                                     <input type="checkbox" class="checkbox-inline my_reset" id="IsCash" name="iscash">
+                                 </div>
+                             @*</div>
+                             <div class="form-group">*@
+                                
+                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">
+                                     <label for="IsNeedSendEmail" class="col-lg-10 col-md-9 col-sm-9 col-xs-9 control-label text-right">Ответ на Email:</label>
+                                     <input type="checkbox" class="checkbox-inline my_reset" id="IsNeedSendEmail" name="isneedsendemail">
+                                 </div>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                 @* Empty div *@
+                             </div>
+                             <div class="col-lg-4">
+                                 @*<div class="col-lg-4">*@
+                                     <button type="submit" class="btn btn-success" id="RecordToMagasineInFact">Сохранить</button>
+                                 @*</div>*@
+                             </div>
+                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                 @* Empty div *@
+                             </div>
+                         </div>
+</form>
+                </div>
+                <div class="modal-footer">                    
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

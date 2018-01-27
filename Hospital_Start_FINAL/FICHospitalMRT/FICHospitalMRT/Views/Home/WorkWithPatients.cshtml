@@ -1,0 +1,99 @@
+﻿@model FICHospitalMRT.Models.Patients
+
+<div class="modal fade" id="ModalAddNewPatient">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal" id="SaveChangeDataOfPatient" onsubmit="return false;">
+
+                        <div class="form-group ">
+                            @*<label for="PatientId" class="col-sm-8 col-lg-3 control-label">Фамилия</label>*@
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="hidden" class="form-control my_reset" id="PatientId" placeholder="Id" name="patientid">
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                               <label for="LastName" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Фамилия</label>
+                               <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                    <input type="text" class="form-control my_reset" id="LastName" placeholder="Фамилия" name="lastname" autofocus>
+                                </div>
+                            </div>
+                        
+
+                        <div class="form-group">
+                            <label for="FirstName" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Имя</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="FirstName" placeholder="Имя" name="firstname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MiddleName" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Отчество</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="MiddleName" placeholder="Отчество" name="middlename">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="CellPhone" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Телефон</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="CellPhone" placeholder="Номер телефона" name="cellphone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                             <label for="BirthDate" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Дата рождения</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="BirthDate" placeholder="Дата рождения" name="birthdate">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Adress" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Адрес</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="Adress" placeholder="Адрес" name="adress">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                             <label for="JobPlace" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Место работы</label>
+                             <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="text" class="form-control my_reset" id="JobPlace" placeholder="Место работы" name="jobplace">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                             <label for="Email" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Email</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                                <input type="email" class="form-control my_reset" id="Email" placeholder="Email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                             <label for="Note" class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label text-right">Пометка</label>
+                            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-4">
+                             <textarea rows="3" type="text" class="form-control my_reset" id="Note" placeholder="Пометка" name="note"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @*<div class="col-lg-offset-6">*@
+                                <button type="submit" class="btn btn-success" id="AddUpdatePatient" >Сохранить</button>
+                            @*</div>*@
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

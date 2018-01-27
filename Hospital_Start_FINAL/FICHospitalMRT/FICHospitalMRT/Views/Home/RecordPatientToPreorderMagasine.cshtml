@@ -1,0 +1,54 @@
+﻿@model FICHospitalMRT.Models.MagasineOfPreorder
+<div class="modal fade" id="RecordPatientToPreorderMagasine">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                       <button class="close" type="button" data-dismiss="modal">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h4 class="hidden-xs modal-title col-sm-7 col-md-7 col-lg-7">Работа в журнале 'Предзаписи'.</h4>
+                        <h4 class="visible-xs modal-title col-xs-7">В 'Предзапись'.</h4>
+           </div>
+            <div class="modal-body">
+                <div class="container-fluid"> @*id="bodywindowofPreorder"*@
+                    <form class="form-horizontal" id="RecordPatientToPreorder" onsubmit="return false;">
+                        
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="DateOfPreorder" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label text-right">Дата записи:</label>
+                                       <div class="input-group date col-xs-4 col-sm-4 col-md-4 col-lg-4" id="DateAndTimeOfPreorder">
+                                            <input type="text" class="form-control my_reset" id="DateOfPreorder" name="VisitDateandTime" />
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar" aria-hidden="true"></span>
+                                            </span>
+                                       
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="ViewOfStudy" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label text-right">Обследование:</label>
+                                <div class="input-group dropdown col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                                    @Html.DropDownListFor(x => x.SelectedStudy, Model.AllUsedStudiesFromDb,"-Выбирете обследование-", new { @id = "ViewOfStudy", @class = "dropdown-toggle form-control"})
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+                                    <button type="submit" class="btn btn-success" id="btn_recordtopreordermagasine">Сохранить</button>
+                                </div>
+                                </div>
+                        </div>
+
+</form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

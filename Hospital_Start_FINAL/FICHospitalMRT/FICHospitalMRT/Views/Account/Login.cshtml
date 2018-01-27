@@ -1,0 +1,97 @@
+﻿@model FICHospitalMRT.Models.Authorization.LoginModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Авторизация</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        
+                
+
+                    <h4 class="text-center">Авторизация</h4>
+
+                    <hr id="title" />
+                    <div class="form-horizontal">
+
+                        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+                        <div class="container">
+                            <div class="row">
+                                <div class="form-group col-lg-5 col-md-8 col-sm-8 col-xs-8 col-lg-push-4 col-md-push-3 col-sm-push-2 col-xs-push-2">
+                                    @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2 col-sm-3 col-xs-3" })
+                                    <div class="col-lg-7 col-md-5 col-sm-7 col-xs-7">
+                                        @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="form-group col-lg-5 col-md-8 col-sm-8 col-xs-8 col-lg-push-4 col-md-push-3 col-sm-push-2 col-xs-push-2">
+                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2 col-sm-3 col-xs-3" })
+                                    <div class="col-lg-7 col-md-5 col-sm-7 col-xs-7">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type="password"} })
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger"})
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4"></div>
+                                    
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-lg-push-5" id="btn_author">
+                                            <div class="form-group">
+                                                <input type="submit" value="Войти" class="btn btn-default" id="login" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-4"></div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-lg-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+
+                        </div>
+                       
+                </div>
+
+    }
+
+</body>
+
+</html>

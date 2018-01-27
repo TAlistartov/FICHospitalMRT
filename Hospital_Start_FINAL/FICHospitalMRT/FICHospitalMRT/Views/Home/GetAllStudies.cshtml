@@ -1,0 +1,14 @@
+﻿@model FICHospitalMRT.Models.Study
+    
+<div class="row">
+     <div class="form">
+        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
+            <div class="form-group">
+                <label for="dropdownAllStudies">Выберите обследование:</label>
+                @Html.DropDownListFor(x => x.SelectedValue, Model.AllStudiesDb, new { @id = "dropdownAllStudies", @class= "dropdown-toggle form-control"})
+            </div>
+         </div>
+    </div>
+</div>
+
+

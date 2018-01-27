@@ -1,0 +1,161 @@
+﻿#head
+{
+   height:57px;
+         
+}
+.search, .tools{
+    margin-top:25%;
+    color: #4f5152;    
+}
+
+#AddUpdatePatient{
+    margin-left:36%;
+}
+
+/*.withoutLeftPadding{
+    padding-left:0%!important;
+}
+
+.btnLocalisation{
+    left:39%;
+}
+@media screen and (max-width: 990px){
+    .btnLocalisation{
+        left:31%;
+    }
+}
+@media screen and (max-width: 768px){
+    .btnLocalisation{
+        left:29%;
+    }
+}*/
+
+
+#border_from_right_side
+{
+    padding-right:18px;
+}
+#empty_ligne
+{
+    height:10px;
+    background-color:#a59d9d /*#f8f8f8*/;
+}
+.control-label
+{
+    text-align:left;
+}
+@media screen and (max-width: 767px){
+    #IsCash, #IsNeedSendEmail{
+        margin-top:0%!important;
+    }
+}
+
+input.error{
+    border:2px solid red;
+      border-color : #f30909;
+}
+.form-group{
+    position:relative;
+}
+
+label.error{
+    display:block;
+    font-size:12px;
+    color:#f30909;
+    position:absolute;
+    left:100%;
+    top:40%;
+    padding-left:2%;
+    width:180px;
+}
+
+#SaveChangeDataOfPatient label.error{
+    display:block;
+    font-size:12px;
+    color:#f30909;
+    position:absolute;
+    left:97%;
+    top:1%;
+    padding-left:2%;
+    width:98%;
+
+}
+
+#RecordPatientToPreorder label.error{
+    display:block;
+    font-size:12px;
+    color:#f30909;
+    position:absolute;
+    left:103%;
+    top:25%;
+    padding-left:2%;
+    width:100%;
+}
+
+#RecordPatientToMagasineInFact label.error{
+    display:block;
+    font-size:12px;
+    color:#f30909;
+    position:absolute;
+    left:103%;
+    top:25%;
+    /*padding-left:1%;*/
+    width:72%;
+}
+
+.highlight .jsgrid-cell {
+  /*background: green;*/
+  color: #008435;
+  font-size: 15px;
+  font-weight: bold;
+}
+.highlight_preorder .jsgrid-cell {
+  /*background: green;*/
+  color: #008435;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#IsCash, #IsNeedSendEmail {
+    margin-top:4%;
+}
+
+#RecordPatientToMagasineInFact i{
+    vertical-align: -61%;
+    /*color:#449d44;*/
+    /*display:none;*/
+}
+#MoreInformationAboutPatient{
+    color:#337ab7;
+}
+#AddOneMoreLaborant {
+    /*vertical-align: -61%;*/
+    color:#449d44;
+    display:none;
+}
+#DeleteSecondLaborant{
+    /*vertical-align: -61%;*/
+    color:#ff0808;
+    display:none;
+ }
+#TheSecondLaborant, #DeleteSecondLaborant{
+    display:none;
+}
+
+#LaborantData_1-error{
+    left: 108%;
+    padding-left:5%;
+    top: 26%;
+}
+
+#VisitDateInFact {
+    padding-left:2.6% !important;
+    padding-right:2.6% !important;
+}
+#title{
+    margin-top:2px;
+}
+#btn_author{
+    text-align:center;
+}
+

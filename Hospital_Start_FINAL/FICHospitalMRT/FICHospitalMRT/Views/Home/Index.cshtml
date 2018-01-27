@@ -1,0 +1,349 @@
+﻿
+@model FICHospitalMRT.Models.Study
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+   
+</head>
+<body>
+    @*1th part of page*@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header col-md-3 col-xs-4">
+                        <img src="~/images_logo/Logo.png" alt="Логотип" class="img-responsive">
+                    </div>
+
+                    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-5 col-md-offset-1">
+                        <h3 class="text-center">
+                            <b class="hidden-sm hidden-xs">Запись на МРТ обследование</b>
+                            <b class="visible-sm hidden-xs">МРТ обследование</b>
+                            <b class="visible-xs ">МРТ</b>
+                        </h3>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 pull-right">
+                        <div class="collapse navbar-collapse pull-right visible-xs">
+                            <ul class="list-inline pull-right">
+
+                                <li class="tools">
+                                    <a href="#modal_1" data-toggle="modal" class="tools">
+                                        <i class="fa fa-cog fa-2x" aria-hidden="true" title="Натройки: создание, удаление и т.д."></i>
+                                    </a>
+                                </li>
+
+                                <li class="search">
+                                    <a href="#table_of_patient" data-toggle="collapse" class="search">
+                                        <i class="fa fa-search fa-2x fa-rotate-90" aria-hidden="true" title="Поиск пациента по БД"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @*2dh part of page*@
+    <div id="table_of_patient" class="collapse">
+        <h3 class="text-center">Поиск пациента по БД</h3>
+        <br />
+        @*<div class="container-fluid">
+                <div class="row">
+
+                    <div class="form-inline">
+                        <div class="col-lg-3 col-md-4 col-sm-5 col-lg-offset-1 col-md-offset-1 col-sm-offset-0">
+                            <div class="form-group pull-right">
+                                <label for="SecondName">Фамилия:</label>
+                                <input type="text" class="form-control" id="SecondName" placeholder="Введите фамилию" autofocus />
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-5 col-lg-offset-4 col-md-offset-2 col-sm-offset-2">
+                            <div class="form-group pull-left">
+                                <label for="TelephoneNumber">Телефон:</label>
+                                <input type="tel" class="form-control" id="TelephoneNumber" placeholder="Введите телефон" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        <br />
+        <div class="container">
+            <div id="DataOfAllPatient"></div>
+        </div>
+
+        <div class="container">
+            <div class="row" id="border_from_right_side">
+                <div class="visible-xs collapse navbar-collapse">
+                    <ul class="list-inline pull-right">
+
+                        <li class="patient_to_preorderder_magasine">
+                            <a href="#">
+                                <i class="fa fa-hand-o-left fa-2x" id="Preorder" aria-hidden="true" title="Добавить в журнал предзаписи"></i>
+                            </a>
+                        </li>
+                        <li class="patient_to_preorderder_magasine">
+                            <a href="#">
+                                <i class="fa fa-hand-o-right fa-2x" id="InFact" aria-hidden="true" title="Добавить в журнал по факту"></i>
+                            </a>
+                        </li>
+                        <li class="hide_block">
+                            <a href="#table_of_patient" data-toggle="collapse">
+                                <i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true" title="Скрыть блок"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        @*Empty box*@
+        <div class="container-fluid" id="empty_ligne"></div>
+        <br />
+    </div>
+
+    @* Work with Date and Time *@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1">
+                        <input type="text" class="form-control" id="date_for_selection_patients_notes" />
+                        <span class="input-group-addon">
+                            <span class="fa fa-calendar" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*3dh part of page*@
+    <div class="container-fluid">
+        <div class="row">
+            
+                <div class="tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab_1" data-toggle="tab" id="PreorderMagasine">Журнал записи пациентов "По предзаписи"</a></li>
+                        @*<li class="visible-xs"><a href="#tab_1" data-toggle="tab" id="PreorderMagasine">"По предзаписи"</a></li>*@
+                        <li><a href="#tab_2" data-toggle="tab" id="InFactMagasine">Журнал записи пациентов "По факту"</a></li>
+                        @*<li class="visible-xs"><a href="#tab_2" data-toggle="tab" id="InFactMagasine">"По факту"</a></li>*@
+                    </ul>
+                </div>
+            
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab_1">
+            @*JsGrid Table for Preordering Patient*@
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="PreorderPatients"></div>
+                    </div>
+                </div>
+                <br />
+                <div class="container-fluid">
+                    <div class="row">                        
+                            <div class="col-lg-2 col-md-2 col-lg-offset-11 pull-right">
+                                <a href="#">
+                                    <i class="fa fa-hand-o-right fa-2x pull-right" id="btnTransferDataFromPreorderToInFact" aria-hidden="true" title="Переносит данные из журнала 'По предзаписи' в журнал 'По факту'."></i>
+                                </a>
+                                    @*<button type="button" class="btn btn-primary" id="btnTransferDataFromPreorderToInFact" title="Переносит данные из журнала 'По предзаписи' в журнал 'По факту'.">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </button>*@                               
+                        </div>
+                    </div>
+                </div>
+                              
+            </div>
+
+            <br />
+            @*Empty box*@
+            <div class="container-fluid" id="empty_ligne"></div>
+            <br />
+
+
+                    <br />
+                </div>
+                <div class="tab-pane fade" id="tab_2">
+                    @*JsGrid Table for Patient in fact*@
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div id="InFactPatients"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            @*Counting money per day*@
+            @{Html.RenderAction("CountingMoneyPerDay");}
+
+            @*Modal window when we click on the icon - tools*@
+            <div class="modal fade" id="modal_1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" type="button" data-dismiss="modal">
+                                <i class="fa fa-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row" >
+                                    @*First row for study*@
+                                    <div class="col-lg-6 col-md-6" id="accordion1">
+                                        <h4>Работа с обследованиями:</h4>
+                                        <div class="panel">
+                                            <a href="#savenewstudy" data-toggle="collapse" data-target="#savenewstudy" data-parent="#accordion1">Создать:</a> <br />
+                                            <div class="collapse fade" id="savenewstudy">
+                                                @{Html.RenderAction("SaveNewStudy");}
+                                            </div>
+                                        </div>
+
+                                        <div class="panel">
+                                            <a href="#getallstudies" data-toggle="collapse" id="getallstudieslink" data-target="#getallstudies" data-parent="#accordion1">Удалить/восстановить:</a><br />
+                                            <div class="collapse fade" id="getallstudies">
+                                                @{Html.RenderAction("GetAllStudies");}
+
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
+                                                        <div class="btn-group pull-right" id="GetAllStudiesButtons">
+                                                            @*Удалить из БД*@
+                                                            <button type="button" class="btn btn-primary" id="btnDeleteStudies" title="Удаляет запись из БД безвозвратно.">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                            @*Удалить*@
+                                                            <button type="button" class="btn btn-primary" id="btnDeleteStudiesFromExisting" title="Помечает запись в БД как неиспользуемую.">
+                                                                <i class="fa fa-scissors"></i>
+                                                            </button>
+                                                            @*Восстановить*@
+                                                            <button type="button" class="btn btn-primary" id="btnRecoverStudiesFromExisting" title="Восстанавливает запись, которая была помечена как неиспользуемая.">
+                                                                <i class="fa fa-undo"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel">
+                                            <a href="#ChangeStudy" data-toggle="collapse" id="ChangeStudyLink" data-target="#ChangeStudy" data-parent="#accordion1">Изменить:</a> <br />
+                                            <div class="collapse fade" id="ChangeStudy">
+                                                <div id="getallstudies1">
+                                                    @{Html.RenderAction("GetAllStudiesForChangingDB");}
+                                                </div>
+                                                @{Html.RenderAction("ChangeExistingStudy");}
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
+                                                        <div id="ChangeSelectedStudyButton">
+                                                            <button type="button" class="btn btn-primary pull-right" id="ChangeDataOfSelectedStudyButton" title="Внесение изменений в выбранное обследование">
+                                                                <i class="fa fa-floppy-o"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                    @*Second row for laborants*@
+                                    <div class="col-lg-6 col-md-6" id="accordion2">
+                                        <h4>Работа с лаборантами:</h4>
+                                        <div class="panel">
+                                            <a href="#SaveNewLaborant" data-toggle="collapse" data-target="#SaveNewLaborant" data-parent="#accordion2">Создать:</a> <br />
+                                            <div class="collapse fade" id="SaveNewLaborant">
+                                                @{Html.RenderAction("SaveNewLaborant");}
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <a href="#DeleteLaborant" data-toggle="collapse" id="getalllaborantslink" data-target="#DeleteLaborant" data-parent="#accordion2">Удалить/восстановить:</a> <br />
+                                            <div class="collapse fade" id="DeleteLaborant">
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
+                                                        <div class="form" id="GetAllLaborants">
+                                                            @{Html.RenderAction("GetAllLaborants");}
+                                                        </div>
+                                                        <div class="btn-group pull-right" id="GetAllLaborantsButtons">
+                                                            @*Удалить из БД*@
+                                                            <button type="button" class="btn btn-primary" id="btnDeleteLaborant" title="Удаляет запись из БД безвозвратно.">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                            @*Удалить*@
+                                                            <button type="button" class="btn btn-primary" id="btnDeleteLaborantFromExisting" title="Помечает запись в БД как неиспользуемую.">
+                                                                <i class="fa fa-scissors"></i>
+                                                            </button>
+                                                            @*Восстановить*@
+                                                            <button type="button" class="btn btn-primary" id="btnRecoverLaborantFromExisting" title="Восстанавливает запись, которая была помечена как неиспользуемая.">
+                                                                <i class="fa fa-undo"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel">
+                                            <a href="#ChangeAnExistingLaborant" data-toggle="collapse" id="ChangeLaborantLink" data-target="#ChangeAnExistingLaborant" data-parent="#accordion2">Изменить:</a> <br />
+                                            <div class="collapse fade" id="ChangeAnExistingLaborant">
+                                                <div class="row">
+                                                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-5">
+                                                        <div class="form">
+                                                            <div id="GetAllLaborants1">
+                                                                @{Html.RenderAction("GetAllLaborantsForChangingDB");}
+                                                            </div>
+                                                            @{Html.RenderAction("ChangeExistingLaborant");}
+                                                        </div>
+                                                        <div id="ChangeSelectedLaborantButton">
+                                                            <button type="button" class="btn btn-primary pull-right" id="ChangeSelectedLaborantInDBButton" title="Внесение изменений в выбранное обследование">
+                                                                <i class="fa fa-floppy-o"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                @{Html.RenderAction("WorkWithPatients");}
+            </div>
+
+    <div>
+        @{ Html.RenderAction("RecordPatientToPreorderMagasine");}        
+    </div>
+
+    <div>
+        @{ Html.RenderAction("M_RecordPatientToMagasineInFact");}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\bin\Release\BLL.dll
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\bin\Release\BLL.pdb
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\bin\Release\DAL.dll
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\bin\Release\DAL.pdb
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\obj\Release\BLL.dll
+C:\Users\Pavlog_3\Documents\Visual Studio 2015\Projects\Hospital_Start_FINAL\BLL\BLL\obj\Release\BLL.pdb
